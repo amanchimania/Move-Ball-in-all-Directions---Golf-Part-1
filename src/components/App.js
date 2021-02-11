@@ -6,6 +6,7 @@ function App(){
     const [posi,setPosi]=useState({left:5,top:5});
     const [ballPosition,setBallPosition]=useState({left:"0",top:"0"});
     const updateXY=(x,y)=>{
+        console.log("x and y is",x,y);
         setBallPosition({
             left:x,
             top:y,
@@ -15,11 +16,11 @@ function App(){
         console.log(event.keyCode);
         switch(event.keyCode){
            case 39:
-               updateXY(ballPosition.left+5,ballPosition.top);
+               updateXY(ballPosition.left-(-5),ballPosition.top);
                break;
         
         case 40 :
-               updateXY(ballPosition.left,ballPosition.top+5);
+               updateXY(ballPosition.left,ballPosition.top-(-5));
                break;
         
         case 37:
